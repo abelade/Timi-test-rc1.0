@@ -17,8 +17,6 @@
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="bower_components/angular-ui-router/release/resolveService.min.js"></script>
   <script src="bower_components/angular-ui-router/release/stateEvents.min.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/jquery/src/sizzle/dist/sizzle.min.js"></script>
 
 <!-- Dev source includes -->
   <script src="src/app.js"></script>
@@ -39,7 +37,17 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-
+<script type="text/ng-template" id="partials/notebook-directive.html">
+    <ul class="thumbnails">
+        <li ng-repeat="note in notes">
+            <my-note class="span2 thumbnail" delete="deleteNote(note.id)" note="note">
+                <button class="btn btn-large close pull-right" ng-click="delete()">&times;</button>
+                <hr/>
+                <p>{{note.title}}</p>
+            </my-note>
+        </li>
+    </ul>
+</script>
 
 </body>
 </html>

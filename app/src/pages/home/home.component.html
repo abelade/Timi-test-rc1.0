@@ -1,4 +1,16 @@
+
+
 <section>
+    <button class="addNoteButton" ng-click="addNote(); myvalue = myvalue == true ? false : true;">Add note</button>
+
+    <form data-ng-submit="addNote()"  ng-show="myvalue" class="note-input hideByDefault">
+        <input id="noteTextArea" type="text" data-ng-model="noteText" placeholder="Enter new Note text" />
+        <br />
+        <input type="submit" value="Add Note" />
+    </form>
+</section>
+<section>
+
     <h1>Welcome to notes app</h1>
     <note-component ng-repeat="note in $ctrl.notes track by $index" note-obj="note" index="$index"></note-component>
 </section>
