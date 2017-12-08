@@ -48,11 +48,11 @@ describe('my app', function() {
         beforeEach(function() {
             browser.get('index.html#/home');
         });
-
+        
 
         it('should show the add note button on page load', function() {
-            expect(element.all(by.css('[ng-view] p')).first().getText()).
-            toMatch(/partial for view 2/);
+            expect(element.all(by.className('addNoteButton')).isDisplayed()).
+            toBeTruthy();
         });
 
     });
