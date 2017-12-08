@@ -1,12 +1,12 @@
 
 
 <section>
-    <button class="addNoteButton" ng-click="addNote(); myvalue = myvalue == true ? false : true;">Add note</button>
+    <button class="addNoteButton" ng-click="myvalue = myvalue == true ? false : true;">Add note</button>
 
-    <form data-ng-submit="addNote()"  ng-show="myvalue" class="note-input hideByDefault">
+    <form  ng-show="myvalue" class="note-input hideByDefault">
         <input id="noteTextArea" type="text" data-ng-model="noteText" placeholder="Enter new Note text" />
         <br />
-        <input type="submit" value="Add Note" />
+        <input type="submit" value="Add Note" ng-click="$ctrl.addNote();"/>
     </form>
 </section>
 <section>
