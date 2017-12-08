@@ -7,8 +7,8 @@ angular
         controller: HomeController
     });
 
-HomeController.$inject = [];
-function HomeController() {
+HomeController.$inject = ['$scope'];
+function HomeController($scope) {
     var $ctrl = this;
     // $scope.saved = localStorage.getItem('notes');
     // $scope.notes = (localStorage.getItem('notes')!==null) ? JSON.parse($scope.saved) : [ {text: 'TalkTalk test', title: ""},
@@ -52,8 +52,6 @@ function HomeController() {
         elementTop = rect.top+scrollTop+480;
         elementLeft = rect.left+scrollLeft+40;
 
-        $ctrl.addNote = function() {
-            console.log("not added");
             $ctrl.newNote = {};
             $ctrl.position = {
                 x: elementTop,
@@ -69,13 +67,7 @@ function HomeController() {
             $ctrl.newNote = {};
             $ctrl.noteText = ''; //clear the input after adding
             // localStorage.setItem('notes', JSON.stringify($scope.notes));
-        }
 
-        $ctrl.delete = function (i) {
-            var r = confirm("Are you sure you want to delete this note?");
-            if (r == true)
-                $ctrl.notes.splice(i, 1);
-        };
     }
 
 
