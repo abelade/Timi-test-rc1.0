@@ -18,7 +18,16 @@ function noteController ($scope) {
     var $ctrl = this;
 
     $ctrl.$onInit = function() {
+        $scope.deleteNote = function (i) {
+            var r = confirm("Are you sure you want to delete this note?");
+            if (r == true)
+                $scope.notes.splice(i, 1);
+        };
     }
+
+
+
+
 }
 
 function noteLink (scope, element, attrs) {
